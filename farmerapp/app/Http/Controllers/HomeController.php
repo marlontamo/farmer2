@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+    $id = Auth::user()->id;
+    $seed = User::findorfail($id)->seed;
+    return view('pages.seeds')->with('seeds', $seed);
+        //return view('pages.home');
     }
 }

@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-static-top navbar-dark bg-dark">
             <div class="container">
                 <div class="navbar-header">
 
@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a style="background:black;color:yellow;border-radius:15px;"class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                     <li><a href="{{URL::to('/seeds')}}">Seeds</a></li>
-                    <li><a href="{{URL::to('/instructions')}}">seed/instructions</a></li>
+                    <li><a href="{{URL::to('')}}"></a></li>
                     <li><a href="{{URL::to('/about')}}">About Us</a></li>
                     <li><a href="{{URL::to('/contact')}}">Contact Us</a></li>
                     </ul>
@@ -75,9 +75,18 @@
         </nav>
 
         @yield('content')
+        
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('form').hide();
+        });
+       jQuery('#btn-add').on('click', function(){
+           jQuery('form').slideToggle();
+       });
+    </script>
 </body>
 </html>

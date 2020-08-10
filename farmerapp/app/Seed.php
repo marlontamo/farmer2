@@ -11,7 +11,7 @@ class Seed extends Model
         'seedname'
     ];
     public function user(){
-        return $this->belongsTo('App\User', 'id');
+        return $this->belongsTo('App\User','id','user_id');
     }
     public function getinstruction(){
         return $this->hasMany('App\Instruction', 'seed_id', 'id');

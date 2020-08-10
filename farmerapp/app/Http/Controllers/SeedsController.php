@@ -5,17 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Seed;
 use Auth;
+use App\User;
 
 class SeedsController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $seed = Seed::all();
+    {    
+       // $seed = USeed::all();
+       $id = Auth::user()->id;
+       $seed = User::findorfail($id)->seed;
     return view('pages.seeds')->with('seeds', $seed);
     }
 

@@ -7,7 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading text-center"> <b>Your Seeds List</b></div>
           
-                <div class="panel-body">
+                <div class="panel-body" style="padding-top: 0;">
+                    <button id="btn-add" class="btn btn-primary btn-sm">add new seed</button>
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -17,6 +18,7 @@
                         </ul>
                     </div>
                 @endif
+                
                     <form action="{{ URL:: to('/seeds')}}" method="post">
                         {{@csrf_field()}}
                         <input type="text" name="seedname">

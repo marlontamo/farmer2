@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     public function seed(){
-        return $this->hasMany('App\User', 'id');
+        return $this->hasMany('App\Seed', 'user_id','id');
     }
     public function instruction(){
         return $this->hasMany('App\Instruction', 'id');

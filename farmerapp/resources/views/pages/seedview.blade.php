@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
             <div class="panel-heading text-center"> <b>{{$seedname->seedname}}</b></div>
-            
+            <button id="btn-add" class="btn btn-primary btn-sm" style="padding-top: 0;">add new instruction</button>
             <form action="{{ URL:: to('/instructions')}}" method="post">
                 {{@csrf_field()}}
             <input type="hidden" name="seed_id" value="{{$seedname->id}}">

@@ -16,11 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
  Route::resource('seeds', 'SeedsController');
  Route:: resource('instructions', 'InstructionController');
  Route::get('/about','PagesController@about');
  Route::get('/contact', 'PagesController@contact');
+
+ 
+
  
  
