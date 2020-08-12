@@ -9,7 +9,14 @@ use App\User;
 
 class SeedsController extends Controller
 {
-    
+    //search
+    public function search(Request $request){
+        $search = $request->get('search'); 
+        $seed = Seed::where('seedname','LIKE','%'.$search.'%')->get();
+        //return dd($seed);
+        return view('pages.searchseed')->with('seeds',$seed);
+
+    }
     /**
      * Display a listing of the resource.
      *

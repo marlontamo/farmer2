@@ -80,13 +80,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        jQuery(document).ready(function(){
-            jQuery('form').hide();
-        });
-       jQuery('#btn-add').on('click', function(){
-           jQuery('form').slideToggle();
-        });
-    </script>
+    
 </body>
 </html>

@@ -5,16 +5,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading text-center"> <b>Your Seeds List</b>
-                  <form action="{{URL::to('/search')}}" method="post">
-                    {{@csrf_field()}}
-                <input type="text" name="search">
-                <input type="submit" value="SEARCH">  
-                </form>
+                <div class="panel-heading text-center"> <b>Search Result</b>
+                
                 </div>
           
-                <div class="panel-body" style="padding-top: 0;">
-                    <button id="btn-add" class="btn btn-primary btn-sm">add new seed</button>
+                <div class="panel-body">
+                    
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -37,9 +33,13 @@
                         </div>
                     @endif
                    <ul class="list-group">
+                   @if(count($seeds)<=0)
+                   <li class="list-group-item">no result found</li>
+                   @else    
                    @foreach ($seeds as $seed)
                    <li class="list-group-item"><a href="{{URL:: to('/seeds')}}/{{$seed->id}}">{{$seed->seedname}}</a></li>
                    @endforeach
+                   @endif
                 </ul>
                 </div>
             </div>
