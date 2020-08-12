@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                     <li><a href="{{URL::to('/seeds')}}">Seeds</a></li>
-                    <li><a href="{{URL::to('')}}"></a>Users</li>
+                    <li><a href="{{URL::to('')}}">Users</a></li>
                     <li><a href="{{URL::to('/about')}}">About Us</a></li>
                     <li><a href="{{URL::to('/contact')}}">Contact Us</a></li>
                     </ul>
