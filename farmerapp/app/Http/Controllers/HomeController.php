@@ -31,6 +31,9 @@ class HomeController extends Controller
         //return view('pages.home');
     }
     public function test(){
-        return "testing";
+        return "";
+    }
+    public function aurora(){
+        return "aurora";
     }
 }
